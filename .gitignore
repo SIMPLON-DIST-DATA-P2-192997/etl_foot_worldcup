@@ -96,6 +96,7 @@ docs/pd_concat_two_columns.md
 docs/regex.md
 docs/reserved_sql_keywords_and_use_of_backticks.md
 docs/useful_commandes_bash.md
+docs/git_workflow_explained.md
 
 # Markdown exports of notebooks (not versioned)
 notebooks/*.md
