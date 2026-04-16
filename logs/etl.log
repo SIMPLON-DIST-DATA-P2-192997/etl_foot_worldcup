@@ -1,0 +1,34 @@
+2026-04-16 12:21:10,335 — INFO — ===== DÉBUT DU PIPELINE ETL =====
+2026-04-16 12:21:10,336 — INFO — Chargement du dataset depuis data_clean/matches_1930_2022_clean.csv
+2026-04-16 12:21:10,363 — INFO — Dataset chargé avec succès : 6607 lignes.
+2026-04-16 12:21:10,363 — INFO — Début de la transformation du dataset.
+2026-04-16 12:21:10,370 — INFO — Génération de la dimension 'city'
+2026-04-16 12:21:10,372 — INFO — Dimension 'city' générée avec 167 lignes.
+2026-04-16 12:21:10,372 — INFO — Génération de la dimension 'stadium'
+2026-04-16 12:21:10,373 — INFO — Dimension 'stadium' générée avec 33 lignes.
+2026-04-16 12:21:10,374 — INFO — Génération de la dimension 'edition'
+2026-04-16 12:21:10,374 — INFO — Dimension 'edition' générée avec 22 lignes.
+2026-04-16 12:21:10,374 — INFO — Application du mapping pour la colonne 'home_team' → 'id_home_team'
+2026-04-16 12:21:10,375 — INFO — Mapping appliqué avec succès pour 'home_team'.
+2026-04-16 12:21:10,375 — INFO — Application du mapping pour la colonne 'away_team' → 'id_away_team'
+2026-04-16 12:21:10,376 — INFO — Mapping appliqué avec succès pour 'away_team'.
+2026-04-16 12:21:10,376 — INFO — Application du mapping pour la colonne 'city' → 'id_city'
+2026-04-16 12:21:10,377 — INFO — Mapping appliqué avec succès pour 'city'.
+2026-04-16 12:21:10,377 — INFO — Application du mapping pour la colonne 'stadium' → 'id_stadium'
+2026-04-16 12:21:10,378 — INFO — Mapping appliqué avec succès pour 'stadium'.
+2026-04-16 12:21:10,378 — INFO — Application du mapping pour la colonne 'edition' → 'id_edition'
+2026-04-16 12:21:10,379 — INFO — Mapping appliqué avec succès pour 'edition'.
+2026-04-16 12:21:10,382 — INFO — Transformation terminée. Tables prêtes pour le chargement MySQL.
+2026-04-16 12:21:10,426 — INFO — package: mysql.connector.plugins
+2026-04-16 12:21:10,426 — INFO — plugin_name: caching_sha2_password
+2026-04-16 12:21:10,426 — INFO — AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2026-04-16 12:21:10,428 — INFO — Connexion MySQL établie avec succès.
+2026-04-16 12:21:10,429 — INFO — Début du chargement MySQL (transaction ouverte).
+2026-04-16 12:21:10,429 — INFO — Insertion dans la table 'team' (82 lignes).
+2026-04-16 12:21:10,432 — INFO — Insertion dans la table 'city' (167 lignes).
+2026-04-16 12:21:10,434 — INFO — Insertion dans la table 'stadium' (33 lignes).
+2026-04-16 12:21:10,435 — INFO — Insertion dans la table 'edition' (22 lignes).
+2026-04-16 12:21:10,436 — INFO — Insertion dans la table '`match`' (964 lignes).
+2026-04-16 12:21:10,491 — INFO — Chargement MySQL terminé avec succès (commit).
+2026-04-16 12:21:10,491 — INFO — Connexion MySQL fermée.
+2026-04-16 12:21:10,491 — INFO — ===== FIN DU PIPELINE ETL =====

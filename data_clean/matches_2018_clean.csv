@@ -1,0 +1,65 @@
+home_team,away_team,home_result,away_result,result,date,round,city,stadium,edition
+Russia,Saudi Arabia,5,0,Russia,2018-06-14 15:00:00,Group A,Moscow,Luzhniki Stadium,2018-RUSSIA
+Egypt,Uruguay,0,1,Uruguay,2018-06-15 12:00:00,Group A,Yekaterinburg,Central Stadium,2018-RUSSIA
+Russia,Egypt,3,1,Russia,2018-06-19 18:00:00,Group A,Saint Petersburg,Krestovsky Stadium,2018-RUSSIA
+Uruguay,Saudi Arabia,1,0,Uruguay,2018-06-20 15:00:00,Group A,Rostov-on-Don,Rostov Arena,2018-RUSSIA
+Uruguay,Russia,3,0,Uruguay,2018-06-25 14:00:00,Group A,Samara,Cosmos Arena,2018-RUSSIA
+Saudi Arabia,Egypt,2,1,Saudi Arabia,2018-06-25 14:00:00,Group A,Volgograd,Volgograd Arena,2018-RUSSIA
+Portugal,Spain,3,3,draw,2018-06-15 18:00:00,Group B,Sochi,Fisht Olympic Stadium,2018-RUSSIA
+Morocco,Iran,0,1,Iran,2018-06-15 15:00:00,Group B,Saint Petersburg,Krestovsky Stadium,2018-RUSSIA
+Portugal,Morocco,1,0,Portugal,2018-06-20 12:00:00,Group B,Moscow,Luzhniki Stadium,2018-RUSSIA
+Iran,Spain,0,1,Spain,2018-06-20 18:00:00,Group B,Kazan,Kazan Arena,2018-RUSSIA
+Iran,Portugal,1,1,draw,2018-06-25 18:00:00,Group B,Saransk,Mordovia Arena,2018-RUSSIA
+Spain,Morocco,2,2,draw,2018-06-25 18:00:00,Group B,Kaliningrad,Kaliningrad Stadium,2018-RUSSIA
+France,Australia,2,1,France,2018-06-16 10:00:00,Group C,Kazan,Kazan Arena,2018-RUSSIA
+Peru,Denmark,0,1,Denmark,2018-06-16 16:00:00,Group C,Saransk,Mordovia Arena,2018-RUSSIA
+France,Peru,1,0,France,2018-06-21 15:00:00,Group C,Yekaterinburg,Central Stadium,2018-RUSSIA
+Denmark,Australia,1,1,draw,2018-06-21 12:00:00,Group C,Samara,Cosmos Arena,2018-RUSSIA
+Denmark,France,0,0,draw,2018-06-26 14:00:00,Group C,Moscow,Luzhniki Stadium,2018-RUSSIA
+Australia,Peru,0,2,Peru,2018-06-26 14:00:00,Group C,Sochi,Fisht Olympic Stadium,2018-RUSSIA
+Argentina,Iceland,1,1,draw,2018-06-16 13:00:00,Group D,Moscow,Otkrytiye Arena,2018-RUSSIA
+Croatia,Nigeria,2,0,Croatia,2018-06-16 19:00:00,Group D,Kaliningrad,Kaliningrad Stadium,2018-RUSSIA
+Argentina,Croatia,0,3,Croatia,2018-06-21 18:00:00,Group D,Nizhny Novgorod,Nizhny Novgorod Stadium,2018-RUSSIA
+Nigeria,Iceland,2,0,Nigeria,2018-06-22 15:00:00,Group D,Volgograd,Volgograd Arena,2018-RUSSIA
+Nigeria,Argentina,1,2,Argentina,2018-06-26 18:00:00,Group D,Saint Petersburg,Krestovsky Stadium,2018-RUSSIA
+Iceland,Croatia,1,2,Croatia,2018-06-26 18:00:00,Group D,Rostov-on-Don,Rostov Arena,2018-RUSSIA
+Brazil,Switzerland,1,1,draw,2018-06-17 18:00:00,Group E,Rostov-on-Don,Rostov Arena,2018-RUSSIA
+Costa Rica,Serbia,0,1,Serbia,2018-06-17 12:00:00,Group E,Samara,Cosmos Arena,2018-RUSSIA
+Brazil,Costa Rica,2,0,Brazil,2018-06-22 12:00:00,Group E,Saint Petersburg,Krestovsky Stadium,2018-RUSSIA
+Serbia,Switzerland,1,2,Switzerland,2018-06-22 18:00:00,Group E,Kaliningrad,Kaliningrad Stadium,2018-RUSSIA
+Serbia,Brazil,0,2,Brazil,2018-06-27 18:00:00,Group E,Moscow,Otkrytiye Arena,2018-RUSSIA
+Switzerland,Costa Rica,2,2,draw,2018-06-27 18:00:00,Group E,Nizhny Novgorod,Nizhny Novgorod Stadium,2018-RUSSIA
+Germany,Mexico,0,1,Mexico,2018-06-17 15:00:00,Group F,Moscow,Luzhniki Stadium,2018-RUSSIA
+Sweden,South Korea,1,0,Sweden,2018-06-18 12:00:00,Group F,Nizhny Novgorod,Nizhny Novgorod Stadium,2018-RUSSIA
+Germany,Sweden,2,1,Germany,2018-06-23 18:00:00,Group F,Sochi,Fisht Olympic Stadium,2018-RUSSIA
+South Korea,Mexico,1,2,Mexico,2018-06-23 15:00:00,Group F,Rostov-on-Don,Rostov Arena,2018-RUSSIA
+South Korea,Germany,2,0,South Korea,2018-06-27 14:00:00,Group F,Kazan,Kazan Arena,2018-RUSSIA
+Mexico,Sweden,0,3,Sweden,2018-06-27 14:00:00,Group F,Yekaterinburg,Central Stadium,2018-RUSSIA
+Belgium,Panama,3,0,Belgium,2018-06-18 15:00:00,Group G,Sochi,Fisht Olympic Stadium,2018-RUSSIA
+Tunisia,England,1,2,England,2018-06-18 18:00:00,Group G,Volgograd,Volgograd Arena,2018-RUSSIA
+Belgium,Tunisia,5,2,Belgium,2018-06-23 12:00:00,Group G,Moscow,Otkrytiye Arena,2018-RUSSIA
+England,Panama,6,1,England,2018-06-24 12:00:00,Group G,Nizhny Novgorod,Nizhny Novgorod Stadium,2018-RUSSIA
+England,Belgium,0,1,Belgium,2018-06-28 18:00:00,Group G,Kaliningrad,Kaliningrad Stadium,2018-RUSSIA
+Panama,Tunisia,1,2,Tunisia,2018-06-28 18:00:00,Group G,Saransk,Mordovia Arena,2018-RUSSIA
+Poland,Senegal,1,2,Senegal,2018-06-19 15:00:00,Group H,Moscow,Otkrytiye Arena,2018-RUSSIA
+Colombia,Japan,1,2,Japan,2018-06-19 12:00:00,Group H,Saransk,Mordovia Arena,2018-RUSSIA
+Poland,Colombia,0,3,Colombia,2018-06-24 18:00:00,Group H,Kazan,Kazan Arena,2018-RUSSIA
+Japan,Senegal,2,2,draw,2018-06-24 15:00:00,Group H,Yekaterinburg,Central Stadium,2018-RUSSIA
+Japan,Poland,0,1,Poland,2018-06-28 14:00:00,Group H,Volgograd,Volgograd Arena,2018-RUSSIA
+Senegal,Colombia,0,1,Colombia,2018-06-28 14:00:00,Group H,Samara,Cosmos Arena,2018-RUSSIA
+Uruguay,Portugal,2,1,Uruguay,2018-06-30 18:00:00,Round of 16,Sochi,Fisht Olympic Stadium,2018-RUSSIA
+France,Argentina,4,3,France,2018-06-30 14:00:00,Round of 16,Kazan,Kazan Arena,2018-RUSSIA
+Spain,Russia,1,1,draw,2018-07-01 14:00:00,Round of 16,Moscow,Luzhniki Stadium,2018-RUSSIA
+Croatia,Denmark,1,1,draw,2018-07-01 18:00:00,Round of 16,Nizhny Novgorod,Nizhny Novgorod Stadium,2018-RUSSIA
+Brazil,Mexico,2,0,Brazil,2018-07-02 14:00:00,Round of 16,Samara,Cosmos Arena,2018-RUSSIA
+Belgium,Japan,3,2,Belgium,2018-07-02 18:00:00,Round of 16,Rostov-on-Don,Rostov Arena,2018-RUSSIA
+Sweden,Switzerland,1,0,Sweden,2018-07-03 14:00:00,Round of 16,Saint Petersburg,Krestovsky Stadium,2018-RUSSIA
+Colombia,England,1,1,draw,2018-07-03 18:00:00,Round of 16,Moscow,Otkrytiye Arena,2018-RUSSIA
+Uruguay,France,0,2,France,2018-07-06 14:00:00,Quarter-finals,Nizhny Novgorod,Nizhny Novgorod Stadium,2018-RUSSIA
+Brazil,Belgium,1,2,Belgium,2018-07-06 18:00:00,Quarter-finals,Kazan,Kazan Arena,2018-RUSSIA
+Russia,Croatia,2,2,draw,2018-07-07 18:00:00,Quarter-finals,Sochi,Fisht Olympic Stadium,2018-RUSSIA
+Sweden,England,0,2,England,2018-07-07 14:00:00,Quarter-finals,Samara,Cosmos Arena,2018-RUSSIA
+France,Belgium,1,0,France,2018-07-10 18:00:00,Semi-finals,Saint Petersburg,Krestovsky Stadium,2018-RUSSIA
+Croatia,England,2,1,Croatia,2018-07-11 18:00:00,Semi-finals,Moscow,Luzhniki Stadium,2018-RUSSIA
+Belgium,England,2,0,Belgium,2018-07-14 14:00:00,Third place play-off,Saint Petersburg,Krestovsky Stadium,2018-RUSSIA
+France,Croatia,4,2,France,2018-07-15 15:00:00,Final,Moscow,Luzhniki Stadium,2018-RUSSIA
