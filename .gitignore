@@ -111,6 +111,27 @@ docs/git_workflow_explained.md
 # Markdown exports of notebooks (not versioned)
 notebooks/*.md
 
+# LaTeX build artifacts
+livrable/*.aux
+livrable/*.log
+livrable/*.out
+livrable/*.toc
+livrable/*.synctex.gz
+livrable/*.fls
+livrable/*.fdb_latexmk
+livrable/*.lof
+livrable/*.lot
+
+# Ignore everything in livrable except source files
+!livrable/*.tex
+!livrable/*.pdf
+!livrable/images/
+
+# Ignorer tous les logs
+logs/*
+# Sauf le fichier d'exemple
+!logs/etl.example.log
+
 # pyenv
 # .python-version
 

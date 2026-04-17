@@ -1,0 +1,21 @@
+\begin{tikzpicture}[
+    node distance=2.5cm,
+    block/.style={
+        rectangle,
+        draw,
+        rounded corners,
+        minimum width=4cm,
+        minimum height=1.2cm,
+        align=center
+    },
+    >=stealth
+]
+
+\node[block] (extract) {Extraction\\CSV / JSON};
+\node[block, right=of extract] (transform) {Transformation\\Nettoyage / Fusion};
+\node[block, right=of transform] (load) {Chargement\\MySQL};
+
+\draw[->, thick] (extract.east) -- (transform.west);
+\draw[->, thick] (transform.east) -- (load.west);
+
+\end{tikzpicture}
