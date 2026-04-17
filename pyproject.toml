@@ -17,4 +17,17 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
 ]
+
+[tool.pytest.ini_options]
+addopts = "--cov=tests --cov-report=term-missing --cov-report=html:htmlcov"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["tests"]
+omit = ["tests/test_cleaning.py", "tests/test_etl.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
