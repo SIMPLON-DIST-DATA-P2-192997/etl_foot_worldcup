@@ -133,6 +133,7 @@ SELECT
 FROM `match` m
 JOIN team t1 ON m.id_home_team = t1.id_team
 JOIN team t2 ON m.id_away_team = t2.id_team
-JOIN stadium s ON m.id_stadium = s.id_stadium
-LEFT JOIN city c ON s.id_city = c.id_city
-JOIN edition e ON m.id_edition = e.id_edition;
+JOIN edition e ON m.id_edition = e.id_edition
+LEFT JOIN stadium s ON m.id_stadium = s.id_stadium
+LEFT JOIN city c ON s.id_city = c.id_city;
+

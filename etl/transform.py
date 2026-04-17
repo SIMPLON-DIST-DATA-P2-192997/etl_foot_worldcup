@@ -87,11 +87,6 @@ def apply_mapping(df: pd.DataFrame, column_name: str, mapping: Dict[str, int], n
     logger.info(f"Mapping appliqué avec succès pour '{column_name}'.")
 
 def transform_matches(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
-    """
-    Transforme le DataFrame brut des matchs en tables dimensionnelles et en table de faits
-    conformes au modèle relationnel (MLD) et prêtes à être chargées dans MySQL.
-    """
-
     logger.info("Début de la transformation du dataset.")
 
     # ============================================================
@@ -99,11 +94,11 @@ def transform_matches(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
     # ============================================================
 
     invalid_patterns = [
-        r"^[A-H][1-4]$",     # A1, B2, C3...
-        r"^[A-H]$",          # A, B, C...
-        r"^\d+$",            # 1, 2, 3...
-        r"^WINNER",          # WINNER X, WINNER Y...
-        r"^LOSER",           # LOSER X, LOSER Y...
+        r"^[A-H][1-4]$",
+        r"^[A-H]$",
+        r"^\d+$",
+        r"^WINNER",
+        r"^LOSER",
     ]
     pattern = "|".join(invalid_patterns)
 
@@ -112,14 +107,23 @@ def transform_matches(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
         ~df["away_team"].astype(str).str.match(pattern)
     ].copy()
 
-    # Suppression des qualifications
     df = df[~df["round"].str.contains("qualification", case=False, na=False)].copy()
-
-    # Suppression des matchs sans score
     df = df.dropna(subset=["home_result", "away_result"]).copy()
 
     # ============================================================
-    # 1. DIMENSIONS
+    # 1. TRAITEMENT DES STADES MANQUANTS PAR ÉDITION
+    # ============================================================
+
+    df["stadium"] = df["stadium"].fillna("UNKNOWN")
+
+    # On crée un stade différent par édition si stadium = UNKNOWN
+    df["stadium"] = df.apply(
+        lambda row: f"UNKNOWN_{row['edition']}" if row["stadium"] == "UNKNOWN" else row["stadium"],
+        axis=1
+    )
+
+    # ============================================================
+    # 2. DIMENSIONS
     # ============================================================
 
     # TEAM
@@ -133,14 +137,14 @@ def transform_matches(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
     # CITY
     city_df, city_map = generate_dimension_table(df, "city")
 
-    # STADIUM
+    # STADIUM (désormais unique par édition si inconnu)
     stadium_df, stadium_map = generate_dimension_table(df, "stadium")
 
     # EDITION
     edition_df, edition_map = generate_dimension_table(df, "edition")
 
     # ============================================================
-    # 2. MAPPINGS
+    # 3. MAPPINGS
     # ============================================================
 
     apply_mapping(df, "home_team", team_map, "id_home_team")
@@ -150,17 +154,17 @@ def transform_matches(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
     apply_mapping(df, "edition", edition_map, "id_edition")
 
     # ============================================================
-    # 3. AJOUT DE id_city DANS LA DIMENSION STADIUM
+    # 4. MAPPING STADIUM → CITY
     # ============================================================
 
-    # On récupère pour chaque stade la ville correspondante
+    # On mappe la ville du match vers la ville du stade
     stadium_city_map = df.drop_duplicates(subset=["stadium"])[["stadium", "id_city"]]
     stadium_city_map = dict(zip(stadium_city_map["stadium"], stadium_city_map["id_city"]))
 
     stadium_df["id_city"] = stadium_df["stadium"].map(stadium_city_map)
 
     # ============================================================
-    # 4. TABLE DE FAITS MATCH
+    # 5. TABLE DE FAITS MATCH
     # ============================================================
 
     match_df = df[[
@@ -175,38 +179,12 @@ def transform_matches(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
         "id_edition"
     ]].copy()
 
-    # ============================================================
-    # 5. DEBUG OPTIONNEL
-    # ============================================================
-
-    missing_scores = df[df["home_result"].isna() | df["away_result"].isna()]
-    print("Lignes avec score manquant :", len(missing_scores))
-
-    missing_away = df[df["id_away_team"].isna()]
-    if len(missing_away) > 0:
-        print("⚠️ Équipes away_team non mappées :", len(missing_away))
-        print(missing_away[["away_team", "home_team", "edition", "round"]].head(20))
-        raise ValueError("Certaines équipes away_team n'ont pas été mappées.")
-
-    missing_home = df[df["id_home_team"].isna()]
-    if len(missing_home) > 0:
-        print("⚠️ Équipes home_team non mappées :", len(missing_home))
-        print(missing_home[["home_team", "away_team", "edition", "round"]].head(20))
-        raise ValueError("Certaines équipes home_team n'ont pas été mappées.")
-
     logger.info("Transformation terminée. Tables prêtes pour le chargement MySQL.")
-
-    # ============================================================
-    # 6. RETOUR DES TABLES
-    # ============================================================
 
     return {
         "team": team_df,
         "city": city_df.rename(columns={"city": "city_name"}),
-        "stadium": stadium_df.rename(columns={
-            "stadium": "stadium_name",
-            "id_city": "id_city"
-        }),
+        "stadium": stadium_df.rename(columns={"stadium": "stadium_name"}),
         "edition": edition_df.rename(columns={"edition": "edition_name"}),
         "match": match_df
     }
